@@ -34,7 +34,7 @@ const checkParam = (obj) => {
         }
         return param.replace(/&$/, '');
     }
-    return '';
+    else return '';
 };
 
 const createUrl = (domain, path =  [], param = {})=>{
@@ -67,7 +67,7 @@ const sortArray = (property, array)=>{
 
 console.log(sortArray("age", [{name: "Steve", age: 22}, {name: "Max", age: 12}, {name: "Stephanie", age: 32}]));
 console.log(sortArray("age", [{name: "Pasha", age: 22}, {name: "Yarik", age: 20}, {name: "Steve", age: 22}, {name: "Max", age: 12}, {name: "Stephanie", age: 32}]));
-console.log(sortArray("name", [{name: "Steve", age: 22}, {name: "Max", age: 12}, {name: "Stephanie", age: 32},{name: "Stephanie", age: 87},{name: "Stephanie", age: 6}]));
+console.log(sortArray("name", [{name: "Steve", age: 22}, {name: "Max", age: 12}, {name: "Stephanie", age: 32},{name: "Stephanie", age: 87},{name: "Stephanie", age: 18}]));
 //-------------------------------5---------------------------------------------
 
 const editObject = (properties, obj) => {
