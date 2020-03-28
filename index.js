@@ -55,12 +55,13 @@ const clearDuplicate = (arr)=>{
     });
     return result;
 };
+// Рішення ок, але тут можна було заюзати Set
 console.log(clearDuplicate(['123', 123, 'yarik', 'yarik', 'course']));
 console.log(clearDuplicate(['123',5,6,44,5, 'Yarik', 'yarik', 'course']));
 console.log(clearDuplicate(['course', 'course', 'course']));
 //--------------------------------4-------------------------------------
 const sortArray = (property, array)=>{
-    let result = [];
+    let result = []; // змінна result тут лшиня, можна відразу повертати array.slice().sort((a,b) => a[property] > b[property] ? 1 : -1);
     result = array.slice().sort((a,b) => a[property] > b[property] ? 1 : -1);
     return result;
 };
@@ -74,7 +75,7 @@ const editObject = (properties, obj) => {
     for(let key in obj) {
         if(obj.hasOwnProperty(key)) {
             const even = (element) => element === key;
-            if (properties.some(even) === false) delete obj[key];
+            if (properties.some(even) === false) delete obj[key]; // поганий підхід - ти мутуєш вхідний об'єкт, треба додавати ці властивості в новий, а не видаляти старі, так можна десь щось зламати випадково
         }
     }
     return obj;
